@@ -2,9 +2,9 @@ name: Bitcointalk PoW coin notifier
 
 on:
   schedule:
-    # rn every 15 mins 
+    #  Runs every 15 minutes
     - cron: '*/15 * * * *'
-  workflow_dispatch: # test manuall
+  workflow_dispatch: # test manual
 
 jobs:
   run-bot:
@@ -23,10 +23,12 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        if [ -f bitcointalk_bot/requirements.txt ]; then pip install -r requirements.txt; fi
+        # 
+        if [ -f bitcointalk_bot/requirements.txt ]; then pip install -r bitcointalk_bot/requirements.txt; fi
 
     - name: Run Monitor Bot
       env:
         DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        NOTIFY_TOKENS: false #  Set it to true if you also want to receive token alerts
+        NOTIFY_TOKENS: false
+      # 
       run: python bitcointalk_bot/bot.py
