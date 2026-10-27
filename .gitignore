@@ -1,0 +1,5 @@
+pearl-audit/
+
+# bitcointalk bot
+bitcointalk_bot/.env
+__pycache__/
