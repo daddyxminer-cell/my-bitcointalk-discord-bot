@@ -1,0 +1,49 @@
+name: Bitcointalk PoW coin notifier
+
+# Checks https://bitcointalk.org/index.php?board=159.0 every 15 minutes and
+# posts new PoW / node coins to Discord. Needs the repo secret DISCORD_WEBHOOK_URL.
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: bitcointalk-bot
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r bitcointalk_bot/requirements.txt
+
+      - name: Check board and notify Discord
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          NOTIFY_TOKENS: ${{ vars.NOTIFY_TOKENS || 'false' }}
+        run: python bitcointalk_bot/bot.py --once
+
+      - name: Save "already seen" list
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add bitcointalk_bot/state/seen.json
+          if git diff --cached --quiet; then
+            echo "No state change"
+          else
+            git commit -m "chore(bot): update seen topics [skip ci]"
+            for i in 1 2 3; do
+              git pull --rebase origin "${GITHUB_REF_NAME}" && git push && break
+              sleep 5
+            done
+          fi
