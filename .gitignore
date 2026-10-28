@@ -3,3 +3,5 @@ pearl-audit/
 # bitcointalk bot
 bitcointalk_bot/.env
 __pycache__/
+bitcointalk_bot/state/seen.json*
+bitcointalk_bot/state/bot.lock
