@@ -33,25 +33,43 @@ Algorithm: RandomX | By: fluxy12
   damaged, the bot stops instead of re-posting old coins.
 - Only one copy can run at a time (`state/bot.lock`). **Run the bot in one place only.** If it
   runs on your PC *and* on GitHub Actions, each copy has its own memory and you'll get doubles.
-- On GitHub Actions the memory is kept on its own branch, `bitcointalk-bot-state`.
+- On GitHub Actions the memory is kept on its own branch, `bitcointalk-bot-state`, and is
+  handed from one relay leg to the next.
 
 ## 1. Create a Discord webhook
 Discord channel -> **Edit Channel -> Integrations -> Webhooks -> New Webhook -> Copy Webhook URL**.
 
 ## 2a. Run it free on GitHub Actions (recommended, runs 24/7)
-0. Turn on the schedule: on GitHub, create the file `.github/workflows/bitcointalk_bot.yml`
-   (**Add file -> Create new file**) and paste in the contents of `bitcointalk_bot/github-workflow.yml`.
-   The workflow has to live in `.github/workflows/` before GitHub will run it.
+GitHub stops every job after **6 hours**, so a single "run forever" job can't work.
+The workflow `.github/workflows/bitcointalk_bot.yml` therefore runs the bot as a **relay**:
+
+1. Each run ("leg") checks the board every 15 minutes for **5.5 hours**. After every check the
+   bot's memory is saved to the branch `bitcointalk-bot-state`.
+2. At the end of the leg it **starts the next leg itself**. The new leg loads the memory and
+   carries on. The hand-over takes about a minute, far shorter than the 15-minute check
+   interval, so no coin is missed.
+3. A **watchdog** runs every hour. If no leg is running (GitHub outage, failed run, manual
+   cancel...) it starts a new one. Otherwise it exits after a few seconds.
+4. Only one leg can run at a time, and memory is merged rather than overwritten, so nothing is
+   posted twice.
+
+Setup:
 1. In the GitHub repo go to **Settings -> Secrets and variables -> Actions -> New repository secret**.
    Name: `DISCORD_WEBHOOK_URL`, value: your webhook URL.
-2. Optional: add a repository **variable** `NOTIFY_TOKENS=true` to also get tokens.
-3. Go to **Actions -> "Bitcointalk PoW coin notifier" -> Run workflow** to test it.
-   After that it runs by itself every 15 minutes
-   (see step 0 below).
+2. Optional repository **variables**: `NOTIFY_TOKENS=true` (also post tokens),
+   `CHECK_INTERVAL_MINUTES` (default 15).
+3. Go to **Actions -> "Bitcointalk PoW coin notifier" -> Run workflow** once to start the relay.
+   If you skip this step, the watchdog starts it within an hour anyway.
 
-> On a private repo the free plan gives 2,000 Action minutes/month. Checking every
-> 15 minutes uses about 2,900, so change the cron to `"*/30 * * * *"` there.
-> Public repos have no limit.
+To **stop** the bot: **Actions -> "Bitcointalk PoW coin notifier" -> ... -> Disable workflow**,
+then cancel the running leg. (A cancelled leg never starts a new one.)
+
+> Uses about 720 runner-minutes a day. That is free and unlimited on a **public** repo. On a
+> private repo the free plan gives only 2,000 minutes a month, which lasts about 3 days, so
+> keep the repo public.
+>
+> `bitcointalk_bot/github-workflow.yml` is a copy of the workflow for reference. GitHub only
+> runs the one in `.github/workflows/`.
 
 ## 2b. Or run it on your own PC or VPS
 ```bash
