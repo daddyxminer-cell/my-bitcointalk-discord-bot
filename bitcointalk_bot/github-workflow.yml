@@ -2,11 +2,16 @@ name: Bitcointalk PoW coin notifier
 
 # Checks https://bitcointalk.org/index.php?board=159.0 every 15 minutes and
 # posts new PoW / node coins to Discord. Needs the repo secret DISCORD_WEBHOOK_URL.
+#
+# The bot's memory (seen.json) is kept on its own branch "bitcointalk-bot-state",
+# so it never conflicts with your normal commits. If two runs ever overlap, both
+# copies are MERGED (never overwritten), so no coin is ever posted twice.
 on:
   schedule:
     - cron: "*/15 * * * *"
   workflow_dispatch:
 
+# Only one run at a time, repo-wide; a queued run waits instead of running in parallel.
 concurrency:
   group: bitcointalk-bot
   cancel-in-progress: false
@@ -14,9 +19,14 @@ concurrency:
 permissions:
   contents: write
 
+env:
+  STATE_BRANCH: bitcointalk-bot-state
+  STATE_DIR: bitcointalk_bot/state
+
 jobs:
   check:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
 
@@ -27,23 +37,46 @@ jobs:
       - name: Install dependencies
         run: pip install -r bitcointalk_bot/requirements.txt
 
+      - name: Load bot memory from state branch
+        run: |
+          mkdir -p "$STATE_DIR"
+          if git fetch --depth=1 origin "$STATE_BRANCH" 2>/dev/null; then
+            git show "FETCH_HEAD:seen.json"     > "$STATE_DIR/seen.json"     2>/dev/null || rm -f "$STATE_DIR/seen.json"
+            git show "FETCH_HEAD:seen.json.bak" > "$STATE_DIR/seen.json.bak" 2>/dev/null || rm -f "$STATE_DIR/seen.json.bak"
+            echo "Loaded memory from $STATE_BRANCH"
+          else
+            echo "No state branch yet - first run will only remember current topics"
+          fi
+
       - name: Check board and notify Discord
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           NOTIFY_TOKENS: ${{ vars.NOTIFY_TOKENS || 'false' }}
         run: python bitcointalk_bot/bot.py --once
 
-      - name: Save "already seen" list
+      - name: Save bot memory to state branch
+        if: always()   # save even if the check step failed after posting
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add bitcointalk_bot/state/seen.json
-          if git diff --cached --quiet; then
-            echo "No state change"
-          else
-            git commit -m "chore(bot): update seen topics [skip ci]"
-            for i in 1 2 3; do
-              git pull --rebase origin "${GITHUB_REF_NAME}" && git push && break
-              sleep 5
-            done
-          fi
+          [ -f "$STATE_DIR/seen.json" ] || { echo "Nothing to save"; exit 0; }
+          git config --global user.name  "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          WORK=$(mktemp -d)
+          for i in 1 2 3 4 5; do
+            rm -rf "$WORK" && mkdir -p "$WORK" && cd "$WORK" && git init -q
+            git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+            if git fetch -q --depth=1 origin "$STATE_BRANCH" 2>/dev/null; then
+              git checkout -q -B "$STATE_BRANCH" FETCH_HEAD
+              # merge the remote copy into ours (union) so nothing is ever forgotten
+              python "$GITHUB_WORKSPACE/bitcointalk_bot/bot.py" --merge-state "$WORK/seen.json"
+            else
+              git checkout -q --orphan "$STATE_BRANCH"
+            fi
+            cp "$GITHUB_WORKSPACE/$STATE_DIR/seen.json" seen.json
+            [ -f "$GITHUB_WORKSPACE/$STATE_DIR/seen.json.bak" ] && cp "$GITHUB_WORKSPACE/$STATE_DIR/seen.json.bak" seen.json.bak
+            git add seen.json seen.json.bak 2>/dev/null || git add seen.json
+            if git diff --cached --quiet; then echo "No change"; exit 0; fi
+            git commit -q -m "bot memory update [skip ci]"
+            if git push -q origin "HEAD:$STATE_BRANCH"; then echo "Saved"; exit 0; fi
+            echo "Push raced with another run, retrying ($i)"; sleep $((i * 3))
+          done
+          echo "::error::Could not save bot memory"; exit 1
