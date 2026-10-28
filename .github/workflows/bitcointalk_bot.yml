@@ -1,34 +1,139 @@
 name: Bitcointalk PoW coin notifier
 
+# Runs the bot 24/7 on GitHub Actions.
+#
+# GitHub kills any job after 6 hours, so the bot runs as a RELAY:
+#   1. Each run ("leg") checks the board every 15 minutes for 5.5 hours, saving the
+#      bot's memory (seen.json) to the branch "bitcointalk-bot-state" after every check.
+#   2. At the end of the leg it starts the next leg itself (workflow_dispatch), which
+#      loads the memory and carries on. The hand-over takes about a minute.
+#   3. A watchdog cron runs every hour. If no leg is running (chain broken by a GitHub
+#      outage, a failed run, a manual cancel...), it starts a new one; otherwise it exits
+#      in a few seconds.
+# Result: never more than one bot at a time, no gaps, no duplicate Discord posts.
+#
+# Needs the repo secret DISCORD_WEBHOOK_URL. Optional repo variables:
+#   NOTIFY_TOKENS=true            also post tokens/memecoins
+#   CHECK_INTERVAL_MINUTES=15     how often to check the board
+# To STOP the bot: Actions -> this workflow -> "..." -> Disable workflow.
+
 on:
   schedule:
-    #  Runs every 15 minutes
-    - cron: '*/15 * * * *'
-  workflow_dispatch: # test manual
+    - cron: "17 * * * *"   # watchdog: restarts the relay if it ever stops
+  workflow_dispatch:
+    inputs:
+      relay:
+        description: "Internal: set by the previous leg when it hands over"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write   # save bot memory to the state branch
+  actions: write    # start the next leg / see whether a leg is running
+
+env:
+  WORKFLOW_FILE: bitcointalk_bot.yml
+  STATE_BRANCH: bitcointalk-bot-state
 
 jobs:
-  run-bot:
+  # Watchdog runs (cron) only start the bot if no other run of this workflow is active.
+  guard:
     runs-on: ubuntu-latest
-
+    timeout-minutes: 5
+    outputs:
+      start: ${{ steps.check.outputs.start }}
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "${{ github.event_name }}" != "schedule" ]; then
+            echo "start=true" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          active=$(gh api "repos/${{ github.repository }}/actions/workflows/$WORKFLOW_FILE/runs?per_page=50" \
+            --jq '[.workflow_runs[] | select(.id != ${{ github.run_id }})
+                   | select(.status as $s | ["queued","in_progress","waiting","pending","requested"] | index($s))] | length')
+          if [ "$active" -gt 0 ]; then
+            echo "Relay is running ($active active run(s)) - watchdog has nothing to do"
+            echo "start=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::No relay leg was running - watchdog is restarting the bot"
+            echo "start=true" >> "$GITHUB_OUTPUT"
+          fi
 
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.10'
-        cache: 'pip'
+  bot:
+    needs: guard
+    if: needs.guard.outputs.start == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 350   # leg runs 330 min; stays well under GitHub's 360 min hard limit
+    # Only one leg at a time. A leg started during a hand-over waits for the old one to finish.
+    concurrency:
+      group: bitcointalk-bot
+      cancel-in-progress: false
+    steps:
+      - name: Remember start time
+        run: echo "LEG_STARTED=$(date +%s)" >> "$GITHUB_ENV"
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        # 
-        if [ -f bitcointalk_bot/requirements.txt ]; then pip install -r bitcointalk_bot/requirements.txt; fi
+      - uses: actions/checkout@v4
 
-    - name: Run Monitor Bot
-      env:
-        DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        NOTIFY_TOKENS: false
-      # 
-      run: python bitcointalk_bot/bot.py
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: bitcointalk_bot/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r bitcointalk_bot/requirements.txt
+
+      - name: Load bot memory from state branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash bitcointalk_bot/ci/state.sh load
+
+      - name: Check board every ${{ vars.CHECK_INTERVAL_MINUTES || '15' }} min for 5.5 hours
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          NOTIFY_TOKENS: ${{ vars.NOTIFY_TOKENS || 'false' }}
+          CHECK_INTERVAL_MINUTES: ${{ vars.CHECK_INTERVAL_MINUTES || '15' }}
+          RUN_MINUTES: "330"
+        run: bash bitcointalk_bot/ci/relay.sh
+
+      - name: Save bot memory (final)
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash bitcointalk_bot/ci/state.sh save
+
+      # Hand over to the next leg. Skipped if the run was cancelled (so you can stop it),
+      # and skipped if another leg is already queued/running (so the chain never doubles).
+      - name: Start next leg
+        if: success() || failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          ran=$(( ($(date +%s) - LEG_STARTED) / 60 ))
+          if [ "$ran" -lt 60 ]; then
+            # Something broke early (e.g. pip/GitHub outage). Don't hammer GitHub with a
+            # fast restart loop - the hourly watchdog will start a fresh leg.
+            echo "::warning::Leg only ran $ran min - leaving the restart to the hourly watchdog"
+            exit 0
+          fi
+          # GitHub can auto-disable workflows (e.g. after 60 days without repo activity).
+          # Re-enabling is a no-op when already enabled and keeps the relay alive.
+          gh api -X PUT "repos/${{ github.repository }}/actions/workflows/$WORKFLOW_FILE/enable" >/dev/null 2>&1 || true
+          active=$(gh api "repos/${{ github.repository }}/actions/workflows/$WORKFLOW_FILE/runs?per_page=50" \
+            --jq '[.workflow_runs[] | select(.id != ${{ github.run_id }})
+                   | select(.status as $s | ["queued","in_progress","waiting","pending","requested"] | index($s))] | length')
+          if [ "$active" -gt 0 ]; then
+            echo "Another leg is already queued/running - not starting a second one"; exit 0
+          fi
+          for i in 1 2 3 4 5; do
+            if gh workflow run "$WORKFLOW_FILE" --repo "${{ github.repository }}" \
+                 --ref "${{ github.ref_name }}" -f relay=true; then
+              echo "Next leg started"; exit 0
+            fi
+            echo "Dispatch failed, retrying ($i)"; sleep $((i * 10))
+          done
+          echo "::error::Could not start the next leg - the hourly watchdog will restart the bot"
+          exit 1
