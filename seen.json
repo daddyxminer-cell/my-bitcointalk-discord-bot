@@ -34,9 +34,18 @@
     5598084,
     5598102,
     5598117,
-    5598138
+    5598138,
+    5598214
   ],
-  "max_topic_id": 5598138,
-  "notified": {},
-  "notified_keys": []
+  "max_topic_id": 5598214,
+  "notified": {
+    "5598214": {
+      "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
+      "at": "2026-10-29T07:45:33+00:00"
+    }
+  },
+  "notified_keys": [
+    "c:woad|woad",
+    "t:woad woad randomx cpu pow the colour comes out of the work"
+  ]
 }
