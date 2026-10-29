@@ -36,9 +36,10 @@
     5598117,
     5598138,
     5598214,
-    5598242
+    5598242,
+    5598308
   ],
-  "max_topic_id": 5598242,
+  "max_topic_id": 5598308,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -47,11 +48,16 @@
     "5598242": {
       "title": "floofychain",
       "at": "2026-10-29T13:15:54+00:00"
+    },
+    "5598308": {
+      "title": "[ANN] MFAI (Music Film AI) on Robinhood Chain | Openfair fair launch 1 Nov 2026",
+      "at": "2026-10-29T22:16:41+00:00"
     }
   },
   "notified_keys": [
     "c:woad|woad",
     "t:floofychain",
+    "t:mfai music film ai on robinhood chain openfair fair launch 1 nov 2026",
     "t:woad woad randomx cpu pow the colour comes out of the work"
   ]
 }
