@@ -41,9 +41,10 @@
     5598320,
     5598415,
     5598416,
-    5598417
+    5598417,
+    5598433
   ],
-  "max_topic_id": 5598417,
+  "max_topic_id": 5598433,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -64,14 +65,20 @@
     "5598415": {
       "title": "ANN] MAKER: EXCAL <-> BTC, 1:1, HTLC, Sovereign, Fair -- First Taker Gets First",
       "at": "2026-10-31T00:33:39+00:00"
+    },
+    "5598433": {
+      "title": "[ANN][PLNM] Plenum - KawPoW, the same pressure at every outlet",
+      "at": "2026-10-31T08:49:00+00:00"
     }
   },
   "notified_keys": [
+    "c:plenum|plnm",
     "c:woad|woad",
     "t:aegis v0 1 0 released post quantum p2p e cash",
     "t:ann maker excal btc 1 1 htlc sovereign fair first taker gets first",
     "t:floofychain",
     "t:mfai music film ai on robinhood chain openfair fair launch 1 nov 2026",
+    "t:plnm plenum kawpow the same pressure at every outlet",
     "t:woad woad randomx cpu pow the colour comes out of the work"
   ]
 }
