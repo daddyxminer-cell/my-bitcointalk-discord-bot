@@ -45,9 +45,10 @@
     5598433,
     5598457,
     5598477,
-    5598488
+    5598488,
+    5598502
   ],
-  "max_topic_id": 5598488,
+  "max_topic_id": 5598502,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -84,9 +85,14 @@
     "5598488": {
       "title": "[ANN] HCRN  Scaling Settlement Without Sacrificing Verification",
       "at": "2026-10-31T21:04:59+00:00"
+    },
+    "5598502": {
+      "title": "[PRE-ANN] Opacra (OPCA) | Private, CPU-mined | Mainnet 8 Nov | Testnet live",
+      "at": "2026-11-01T06:50:19+00:00"
     }
   },
   "notified_keys": [
+    "c:opacra|opca",
     "c:plenum|plnm",
     "c:retro|tape",
     "c:unftchain|unft",
@@ -96,6 +102,7 @@
     "t:floofychain",
     "t:hcrn scaling settlement without sacrificing verification",
     "t:mfai music film ai on robinhood chain openfair fair launch 1 nov 2026",
+    "t:opacra opca private cpu mined mainnet 8 nov testnet live",
     "t:plnm plenum kawpow the same pressure at every outlet",
     "t:tape retro boomer fair launch no premine 10b supply",
     "t:unftchain unft mainnet live proof of fairness identity based minin",
