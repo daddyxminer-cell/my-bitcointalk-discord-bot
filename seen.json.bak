@@ -47,9 +47,10 @@
     5598477,
     5598488,
     5598502,
-    5598514
+    5598514,
+    5598573
   ],
-  "max_topic_id": 5598514,
+  "max_topic_id": 5598573,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -94,6 +95,10 @@
     "5598514": {
       "title": "[ANN][BIG] BigCoin - independent SHA-256d PoW chain. No ICO, nothing for sale",
       "at": "2026-11-01T08:20:46+00:00"
+    },
+    "5598573": {
+      "title": "[ANN] [SOV] Sovereign Coin | Anti-ASIC Tensor Folding | Recursive ZK-STARK Scali",
+      "at": "2026-11-01T20:36:32+00:00"
     }
   },
   "notified_keys": [
@@ -101,6 +106,7 @@
     "c:opacra|opca",
     "c:plenum|plnm",
     "c:retro|tape",
+    "c:sovereign|sov",
     "c:unftchain|unft",
     "c:woad|woad",
     "t:aegis v0 1 0 released post quantum p2p e cash",
@@ -111,6 +117,7 @@
     "t:mfai music film ai on robinhood chain openfair fair launch 1 nov 2026",
     "t:opacra opca private cpu mined mainnet 8 nov testnet live",
     "t:plnm plenum kawpow the same pressure at every outlet",
+    "t:sov sovereign coin anti asic tensor folding recursive zk stark scali",
     "t:tape retro boomer fair launch no premine 10b supply",
     "t:unftchain unft mainnet live proof of fairness identity based minin",
     "t:woad woad randomx cpu pow the colour comes out of the work"
