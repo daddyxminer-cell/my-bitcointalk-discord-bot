@@ -46,9 +46,10 @@
     5598457,
     5598477,
     5598488,
-    5598502
+    5598502,
+    5598514
   ],
-  "max_topic_id": 5598502,
+  "max_topic_id": 5598514,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -89,9 +90,14 @@
     "5598502": {
       "title": "[PRE-ANN] Opacra (OPCA) | Private, CPU-mined | Mainnet 8 Nov | Testnet live",
       "at": "2026-11-01T06:50:19+00:00"
+    },
+    "5598514": {
+      "title": "[ANN][BIG] BigCoin - independent SHA-256d PoW chain. No ICO, nothing for sale",
+      "at": "2026-11-01T08:20:46+00:00"
     }
   },
   "notified_keys": [
+    "c:bigcoin|big",
     "c:opacra|opca",
     "c:plenum|plnm",
     "c:retro|tape",
@@ -99,6 +105,7 @@
     "c:woad|woad",
     "t:aegis v0 1 0 released post quantum p2p e cash",
     "t:ann maker excal btc 1 1 htlc sovereign fair first taker gets first",
+    "t:big bigcoin independent sha 256d pow chain no ico nothing for sale",
     "t:floofychain",
     "t:hcrn scaling settlement without sacrificing verification",
     "t:mfai music film ai on robinhood chain openfair fair launch 1 nov 2026",
