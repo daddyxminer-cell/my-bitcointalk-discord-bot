@@ -15,6 +15,9 @@ name: Bitcointalk PoW coin notifier
 # Needs the repo secret DISCORD_WEBHOOK_URL. Optional repo variables:
 #   NOTIFY_TOKENS=true            also post tokens/memecoins
 #   CHECK_INTERVAL_MINUTES=15     how often to check the board
+#   DATA_SOURCE=auto              auto | bitcointalk | ninjastic. "auto" reads bitcointalk and,
+#                                 when it blocks GitHub's servers (HTTP 403), reads the same
+#                                 board from the ninjastic.space archive instead.
 # To STOP the bot: Actions -> this workflow -> "..." -> Disable workflow.
 
 on:
@@ -96,6 +99,7 @@ jobs:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           NOTIFY_TOKENS: ${{ vars.NOTIFY_TOKENS || 'false' }}
           CHECK_INTERVAL_MINUTES: ${{ vars.CHECK_INTERVAL_MINUTES || '15' }}
+          DATA_SOURCE: ${{ vars.DATA_SOURCE || 'auto' }}
           RUN_MINUTES: "330"
         run: bash bitcointalk_bot/ci/relay.sh
 
