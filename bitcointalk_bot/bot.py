@@ -18,6 +18,8 @@ Settings come from environment variables (or a .env file next to this script):
     NOTIFY_TOKENS            "true" to also post tokens/memecoins (orange). default false
     PAGES_TO_SCAN            board pages to scan per check (40 topics each). default 1
     MAX_AGE_HOURS            ignore topics whose first post is older than this. default 24
+    DATA_SOURCE              auto (default: bitcointalk, falls back to the ninjastic.space
+                             archive when bitcointalk answers 403), bitcointalk, or ninjastic
 
 No-repeat guarantee:
     * Every coin is written to state/seen.json BEFORE it is posted, so a crash,
@@ -31,6 +33,7 @@ No-repeat guarantee:
 from __future__ import annotations
 
 import argparse
+import html as htmllib
 import json
 import logging
 import os
@@ -52,8 +55,21 @@ STATE_FILE = HERE / "state" / "seen.json"
 BACKUP_FILE = HERE / "state" / "seen.json.bak"
 LOCK_FILE = HERE / "state" / "bot.lock"
 STATE_VERSION = 2
-USER_AGENT = "Mozilla/5.0 (compatible; altcoin-ann-discord-notifier/1.0)"
+USER_AGENT = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+)
 REQUEST_DELAY = 1.5  # seconds between requests -- be polite to bitcointalk
+
+# Fallback data source. Bitcointalk (behind Cloudflare) answers HTTP 403 to many
+# datacenter IPs -- including GitHub Actions runners. When that happens the bot reads
+# the same board from the public ninjastic.space bitcointalk archive (updated within
+# minutes) instead. Set DATA_SOURCE=bitcointalk / ninjastic to force one source.
+NINJASTIC_API = "https://api.ninjastic.space/posts"
+NINJASTIC_BOARD_POSTS = 200  # latest posts of the board to read per check (API max = 200)
+# The archive can index topics slightly out of order, so when reading from it we also
+# accept unseen topics a little BELOW the highest handled ID ("seen" still prevents repeats).
+NINJASTIC_ID_MARGIN = 300
 
 COLOR_COIN = 0x1F3FD8   # blue  (like the screenshot)
 COLOR_TOKEN = 0xE8590C  # orange
@@ -150,21 +166,108 @@ class Topic:
 
 
 session = requests.Session()
-session.headers.update({"User-Agent": USER_AGENT})
+session.headers.update({
+    "User-Agent": USER_AGENT,
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+})
+
+
+class Blocked(RuntimeError):
+    """Bitcointalk refused us (HTTP 403 / 429 / Cloudflare challenge)."""
+
+
+# Once bitcointalk blocks us during a run, stop asking it (each refused request costs
+# ~30 s of retries) and use the fallback API for the rest of the run.
+_btt_blocked = False
 
 
 def fetch(url: str) -> str:
+    global _btt_blocked
+    if _btt_blocked:
+        raise Blocked(f"bitcointalk is blocking this machine, skipped {url}")
+    blocked_hits = 0
     for attempt in range(3):
         try:
             r = session.get(url, timeout=30)
-            if r.status_code == 200:
+            if r.status_code == 200 and "cf-chl" not in r.text[:5000]:
                 time.sleep(REQUEST_DELAY)
                 return r.text
             log.warning("HTTP %s for %s", r.status_code, url)
+            if r.status_code in (403, 429, 503) or r.status_code == 200:
+                blocked_hits += 1
+                if blocked_hits >= 2:
+                    break
         except requests.RequestException as e:
             log.warning("Request error for %s: %s", url, e)
         time.sleep(5 * (attempt + 1))
+    if blocked_hits:
+        _btt_blocked = True
+        raise Blocked(f"bitcointalk blocked {url} (HTTP 403) -- using the ninjastic.space fallback")
     raise RuntimeError(f"Failed to fetch {url}")
+
+
+def ninjastic_get(params: dict) -> list[dict]:
+    """Query the ninjastic.space bitcointalk archive; returns its list of posts."""
+    last = None
+    for attempt in range(3):
+        try:
+            r = requests.get(NINJASTIC_API, params=params, timeout=30,
+                             headers={"User-Agent": "altcoin-ann-discord-notifier/1.1"})
+            if r.status_code == 200:
+                data = r.json()
+                if data.get("result") == "success" and data.get("data"):
+                    return data["data"].get("posts") or []
+                last = data.get("message") or "bad response"
+            else:
+                last = f"HTTP {r.status_code}"
+        except (requests.RequestException, ValueError) as e:
+            last = str(e)
+        log.warning("ninjastic.space API error (%s), retrying", last)
+        time.sleep(5 * (attempt + 1))
+    raise RuntimeError(f"ninjastic.space API failed: {last}")
+
+
+def _iso(s: str | None) -> datetime | None:
+    if not s:
+        return None
+    try:
+        return datetime.fromisoformat(s.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+
+
+def board_topics_ninjastic(board_id: int) -> list[Topic]:
+    """Topics with recent activity on the board, built from the latest posts in the archive."""
+    posts = ninjastic_get({"board": board_id, "limit": NINJASTIC_BOARD_POSTS})
+    topics: dict[int, Topic] = {}
+    for p in posts:
+        tid = int(p["topic_id"])
+        title = htmllib.unescape(p.get("title") or "").strip()
+        is_reply = bool(re.match(r"^re:\s*", title, re.I))
+        title = re.sub(r"^re:\s*", "", title, flags=re.I)
+        t = topics.get(tid)
+        if t is None:
+            t = topics[tid] = Topic(id=tid, title=title, url=f"{BASE}?topic={tid}.0")
+        if not is_reply:  # this is the opening post -> exact title + author
+            t.title = title
+            t.author = p.get("author") or ""
+    return list(topics.values())
+
+
+def enrich_topic_ninjastic(topic: Topic) -> None:
+    """Read the first post of a topic from the archive and classify it."""
+    posts = ninjastic_get({"topic_id": topic.id, "limit": 1, "order": "ASC"})
+    if not posts:
+        raise RuntimeError(f"topic {topic.id} not in the archive yet")
+    p = posts[0]
+    title = htmllib.unescape(p.get("title") or "").strip()
+    if title and not title.lower().startswith("re:"):
+        topic.title = title
+    topic.author = p.get("author") or topic.author
+    topic.started = _iso(p.get("date"))
+    body = BeautifulSoup(p.get("content") or "", "html.parser").get_text(" ", strip=True)[:20000]
+    topic.kind, topic.algo = classify(topic.title, body)
 
 
 def parse_board(html: str) -> list[Topic]:
@@ -206,9 +309,19 @@ def parse_forum_date(text: str, now: datetime) -> datetime | None:
     return None
 
 
-def enrich_topic(topic: Topic, now: datetime) -> None:
+def enrich_topic(topic: Topic, now: datetime, source: str = "auto") -> None:
     """Open the topic, read the first post date + text, and classify it."""
-    soup = BeautifulSoup(fetch(topic.url), "html.parser")
+    if source == "ninjastic" or (source == "auto" and _btt_blocked):
+        enrich_topic_ninjastic(topic)
+        return
+    try:
+        page = fetch(topic.url)
+    except Blocked:
+        if source == "bitcointalk":
+            raise
+        enrich_topic_ninjastic(topic)
+        return
+    soup = BeautifulSoup(page, "html.parser")
     first = soup.find("td", class_="td_headerandpost")
     body = ""
     if first:
@@ -447,15 +560,38 @@ def mark_notified(state: dict, topic: Topic, now: datetime) -> None:
     state["seen"] = list(set(state["seen"]) | {topic.id})
 
 
+def get_board_topics(cfg: dict) -> list[Topic]:
+    """Board topics from bitcointalk, or from the ninjastic.space archive if we're blocked."""
+    source = cfg["source"]
+    if source != "ninjastic" and not _btt_blocked:
+        try:
+            topics: list[Topic] = []
+            for page in range(cfg["pages"]):
+                topics += parse_board(fetch(f"{BASE}?board={BOARD_ID}.{page * 40}"))
+            if topics or source == "bitcointalk":
+                return topics
+            log.warning("Bitcointalk board page had no topics -- trying the ninjastic.space archive")
+        except Blocked as e:
+            if source == "bitcointalk":
+                raise
+            log.warning("%s", e)
+        except RuntimeError as e:
+            if source == "bitcointalk":
+                raise
+            log.warning("%s -- trying the ninjastic.space archive", e)
+    log.info("Reading board %d from the ninjastic.space archive", BOARD_ID)
+    cfg["_from_archive"] = True
+    return board_topics_ninjastic(BOARD_ID)
+
+
 def check_once(cfg: dict, dry_run: bool = False) -> int:
     now = datetime.now(timezone.utc)
     state = load_state()
     seen = set(state["seen"])
     fresh_state = state["max_topic_id"] == 0 and not state["notified"]
 
-    topics: list[Topic] = []
-    for page in range(cfg["pages"]):
-        topics += parse_board(fetch(f"{BASE}?board={BOARD_ID}.{page * 40}"))
+    cfg["_from_archive"] = False
+    topics = get_board_topics(cfg)
     log.info("Scanned %d topics on board %d", len(topics), BOARD_ID)
     if not topics:
         log.warning("Board page had no topics (site down / layout changed?) -- nothing done")
@@ -476,6 +612,8 @@ def check_once(cfg: dict, dry_run: bool = False) -> int:
     # New topic = never seen before AND newer than anything we've handled
     # (old threads bumped to the top of the board have low IDs, so they're skipped).
     threshold = 0 if fresh_state else state["max_topic_id"]
+    if cfg.get("_from_archive") and threshold:
+        threshold = max(0, threshold - NINJASTIC_ID_MARGIN)
     candidates = [t for t in topics if t.id not in seen and t.id > threshold]
     candidates.sort(key=lambda t: t.id)
 
@@ -484,7 +622,7 @@ def check_once(cfg: dict, dry_run: bool = False) -> int:
     cutoff = now - timedelta(hours=cfg["max_age_hours"])
     for t in candidates:
         try:
-            enrich_topic(t, now)
+            enrich_topic(t, now, cfg["source"])
         except Exception as e:  # noqa: BLE001
             log.warning("Could not read topic %s: %s", t.id, e)
             failed.add(t.id)  # retry on the next check
@@ -560,7 +698,10 @@ def main() -> None:
         "pages": max(1, int(os.getenv("PAGES_TO_SCAN", "1"))),
         "max_age_hours": float(os.getenv("MAX_AGE_HOURS", "24")),
         "post_on_first_run": os.getenv("POST_ON_FIRST_RUN", "false").lower() in ("1", "true", "yes"),
+        "source": os.getenv("DATA_SOURCE", "auto").strip().lower() or "auto",
     }
+    if cfg["source"] not in ("auto", "bitcointalk", "ninjastic"):
+        sys.exit("ERROR: DATA_SOURCE must be auto, bitcointalk or ninjastic")
     if not cfg["webhook"] and not args.dry_run:
         sys.exit("ERROR: set DISCORD_WEBHOOK_URL (env var or .env file), or use --dry-run")
 
