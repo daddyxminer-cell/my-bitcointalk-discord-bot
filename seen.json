@@ -49,9 +49,16 @@
     5598502,
     5598514,
     5598573,
-    5598574
+    5598574,
+    5598593,
+    5598598,
+    5598709,
+    5598711,
+    5598765,
+    5598837,
+    5598855
   ],
-  "max_topic_id": 5598574,
+  "max_topic_id": 5598855,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -100,6 +107,14 @@
     "5598573": {
       "title": "[ANN] [SOV] Sovereign Coin | Anti-ASIC Tensor Folding | Recursive ZK-STARK Scali",
       "at": "2026-11-01T20:36:32+00:00"
+    },
+    "5598765": {
+      "title": "[ANN] VMRX (VargaMesh RX) | RandomX PoW | Independent L1 | Mainnet Live | CPU",
+      "at": "2026-11-04T15:03:39+00:00"
+    },
+    "5598837": {
+      "title": "[*DEVS WANTED*] Kasual Labz - Development Team Recruitment",
+      "at": "2026-11-04T15:03:39+00:00"
     }
   },
   "notified_keys": [
@@ -113,6 +128,7 @@
     "t:aegis v0 1 0 released post quantum p2p e cash",
     "t:ann maker excal btc 1 1 htlc sovereign fair first taker gets first",
     "t:big bigcoin independent sha 256d pow chain no ico nothing for sale",
+    "t:devs wanted kasual labz development team recruitment",
     "t:floofychain",
     "t:hcrn scaling settlement without sacrificing verification",
     "t:mfai music film ai on robinhood chain openfair fair launch 1 nov 2026",
@@ -121,6 +137,7 @@
     "t:sov sovereign coin anti asic tensor folding recursive zk stark scali",
     "t:tape retro boomer fair launch no premine 10b supply",
     "t:unftchain unft mainnet live proof of fairness identity based minin",
+    "t:vmrx vargamesh rx randomx pow independent l1 mainnet live cpu",
     "t:woad woad randomx cpu pow the colour comes out of the work"
   ]
 }
