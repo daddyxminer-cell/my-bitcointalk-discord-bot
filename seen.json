@@ -58,9 +58,10 @@
     5598837,
     5598855,
     5598879,
-    5598892
+    5598892,
+    5598953
   ],
-  "max_topic_id": 5598892,
+  "max_topic_id": 5598953,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
