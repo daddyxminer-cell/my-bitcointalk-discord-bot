@@ -59,9 +59,10 @@
     5598855,
     5598879,
     5598892,
-    5598953
+    5598953,
+    5598979
   ],
-  "max_topic_id": 5598953,
+  "max_topic_id": 5598979,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -126,6 +127,10 @@
     "5598892": {
       "title": "[ANN] BITRUBIN (BRBN)  Burn Bitcoin. Create BITRUBIN.",
       "at": "2026-11-04T23:04:16+00:00"
+    },
+    "5598979": {
+      "title": "[ANN][TESTNET] NEB (Neural Engine Byte)",
+      "at": "2026-11-05T19:06:00+00:00"
     }
   },
   "notified_keys": [
@@ -150,6 +155,7 @@
     "t:plnm plenum kawpow the same pressure at every outlet",
     "t:sov sovereign coin anti asic tensor folding recursive zk stark scali",
     "t:tape retro boomer fair launch no premine 10b supply",
+    "t:testnet neb neural engine byte",
     "t:unftchain unft mainnet live proof of fairness identity based minin",
     "t:vmrx vargamesh rx randomx pow independent l1 mainnet live cpu",
     "t:woad woad randomx cpu pow the colour comes out of the work"
