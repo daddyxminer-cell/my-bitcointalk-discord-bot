@@ -61,9 +61,10 @@
     5598892,
     5598953,
     5598979,
-    5598991
+    5598991,
+    5598995
   ],
-  "max_topic_id": 5598991,
+  "max_topic_id": 5598995,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -132,12 +133,17 @@
     "5598979": {
       "title": "[ANN][TESTNET] NEB (Neural Engine Byte)",
       "at": "2026-11-05T19:06:00+00:00"
+    },
+    "5598995": {
+      "title": "[ANN] Pinch (PINCH) | Ethash PoW | No premine | GPU & CPU solo mining | Escrow",
+      "at": "2026-11-05T22:21:01+00:00"
     }
   },
   "notified_keys": [
     "c:bigcoin|big",
     "c:bitrubin|brbn",
     "c:opacra|opca",
+    "c:pinch|pinch",
     "c:plenum|plnm",
     "c:retro|tape",
     "c:sovereign|sov",
@@ -153,6 +159,7 @@
     "t:hcrn scaling settlement without sacrificing verification",
     "t:mfai music film ai on robinhood chain openfair fair launch 1 nov 2026",
     "t:opacra opca private cpu mined mainnet 8 nov testnet live",
+    "t:pinch pinch ethash pow no premine gpu cpu solo mining escrow",
     "t:plnm plenum kawpow the same pressure at every outlet",
     "t:sov sovereign coin anti asic tensor folding recursive zk stark scali",
     "t:tape retro boomer fair launch no premine 10b supply",
