@@ -62,9 +62,10 @@
     5598953,
     5598979,
     5598991,
-    5598995
+    5598995,
+    5599005
   ],
-  "max_topic_id": 5598995,
+  "max_topic_id": 5599005,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -137,6 +138,10 @@
     "5598995": {
       "title": "[ANN] Pinch (PINCH) | Ethash PoW | No premine | GPU & CPU solo mining | Escrow",
       "at": "2026-11-05T22:21:01+00:00"
+    },
+    "5599005": {
+      "title": "VAYLIUM , a peer-to-peer digital currency",
+      "at": "2026-11-06T09:37:27+00:00"
     }
   },
   "notified_keys": [
@@ -165,6 +170,7 @@
     "t:tape retro boomer fair launch no premine 10b supply",
     "t:testnet neb neural engine byte",
     "t:unftchain unft mainnet live proof of fairness identity based minin",
+    "t:vaylium a peer to peer digital currency",
     "t:vmrx vargamesh rx randomx pow independent l1 mainnet live cpu",
     "t:woad woad randomx cpu pow the colour comes out of the work"
   ]
