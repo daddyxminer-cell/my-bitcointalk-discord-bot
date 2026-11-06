@@ -63,9 +63,10 @@
     5598979,
     5598991,
     5598995,
-    5599005
+    5599005,
+    5599092
   ],
-  "max_topic_id": 5599005,
+  "max_topic_id": 5599092,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -142,6 +143,10 @@
     "5599005": {
       "title": "VAYLIUM , a peer-to-peer digital currency",
       "at": "2026-11-06T09:37:27+00:00"
+    },
+    "5599092": {
+      "title": "[ANN] QNET BLOCKCHAIN | Post-Quantum-Resistant Layer 1",
+      "at": "2026-11-06T16:52:53+00:00"
     }
   },
   "notified_keys": [
@@ -166,6 +171,7 @@
     "t:opacra opca private cpu mined mainnet 8 nov testnet live",
     "t:pinch pinch ethash pow no premine gpu cpu solo mining escrow",
     "t:plnm plenum kawpow the same pressure at every outlet",
+    "t:qnet blockchain post quantum resistant layer 1",
     "t:sov sovereign coin anti asic tensor folding recursive zk stark scali",
     "t:tape retro boomer fair launch no premine 10b supply",
     "t:testnet neb neural engine byte",
