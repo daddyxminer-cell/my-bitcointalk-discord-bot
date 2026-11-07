@@ -65,9 +65,10 @@
     5598995,
     5599005,
     5599092,
-    5599140
+    5599140,
+    5599158
   ],
-  "max_topic_id": 5599140,
+  "max_topic_id": 5599158,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -152,6 +153,10 @@
     "5599140": {
       "title": "[ANN] KawaidCoin (KWD) - Python SHA-256 PoW Blockchain, Faucet & CPU Miner",
       "at": "2026-11-07T11:09:09+00:00"
+    },
+    "5599158": {
+      "title": "[ANN] Ting | General-purpose PoW blockchain | CPU/GPU mining | No premine",
+      "at": "2026-11-07T16:39:35+00:00"
     }
   },
   "notified_keys": [
@@ -182,6 +187,7 @@
     "t:sov sovereign coin anti asic tensor folding recursive zk stark scali",
     "t:tape retro boomer fair launch no premine 10b supply",
     "t:testnet neb neural engine byte",
+    "t:ting general purpose pow blockchain cpu gpu mining no premine",
     "t:unftchain unft mainnet live proof of fairness identity based minin",
     "t:vaylium a peer to peer digital currency",
     "t:vmrx vargamesh rx randomx pow independent l1 mainnet live cpu",
