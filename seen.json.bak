@@ -68,9 +68,11 @@
     5599140,
     5599158,
     5599189,
-    5599212
+    5599212,
+    5599217,
+    5599218
   ],
-  "max_topic_id": 5599212,
+  "max_topic_id": 5599218,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -163,6 +165,14 @@
     "5599212": {
       "title": "[ANN][ABRS] Aurora Borealis Coin | KAWPOW PoW | Native Layer-1 Blockchain | GPU",
       "at": "2026-11-08T09:11:16+00:00"
+    },
+    "5599217": {
+      "title": "Adios: Bitcoin & Zcash Layer-2",
+      "at": "2026-11-08T11:11:17+00:00"
+    },
+    "5599218": {
+      "title": "NEB roadmap: testnet 2 to mainnet",
+      "at": "2026-11-08T11:11:17+00:00"
     }
   },
   "notified_keys": [
@@ -178,6 +188,7 @@
     "c:unftchain|unft",
     "c:woad|woad",
     "t:abrs aurora borealis coin kawpow pow native layer 1 blockchain gpu",
+    "t:adios bitcoin zcash layer 2",
     "t:aegis v0 1 0 released post quantum p2p e cash",
     "t:ann maker excal btc 1 1 htlc sovereign fair first taker gets first",
     "t:big bigcoin independent sha 256d pow chain no ico nothing for sale",
@@ -188,6 +199,7 @@
     "t:hcrn scaling settlement without sacrificing verification",
     "t:kawaidcoin kwd python sha 256 pow blockchain faucet cpu miner",
     "t:mfai music film ai on robinhood chain openfair fair launch 1 nov 2026",
+    "t:neb roadmap testnet 2 to mainnet",
     "t:opacra opca private cpu mined mainnet 8 nov testnet live",
     "t:pinch pinch ethash pow no premine gpu cpu solo mining escrow",
     "t:plnm plenum kawpow the same pressure at every outlet",
