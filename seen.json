@@ -71,9 +71,10 @@
     5599212,
     5599217,
     5599218,
-    5599254
+    5599254,
+    5599283
   ],
-  "max_topic_id": 5599254,
+  "max_topic_id": 5599283,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -174,6 +175,10 @@
     "5599218": {
       "title": "NEB roadmap: testnet 2 to mainnet",
       "at": "2026-11-08T11:11:17+00:00"
+    },
+    "5599283": {
+      "title": "[ANN] Pandora testnet LIVE: blocks by lottery, every message is a token transfer",
+      "at": "2026-11-09T08:12:59+00:00"
     }
   },
   "notified_keys": [
@@ -202,6 +207,7 @@
     "t:mfai music film ai on robinhood chain openfair fair launch 1 nov 2026",
     "t:neb roadmap testnet 2 to mainnet",
     "t:opacra opca private cpu mined mainnet 8 nov testnet live",
+    "t:pandora testnet live blocks by lottery every message is a token transfer",
     "t:pinch pinch ethash pow no premine gpu cpu solo mining escrow",
     "t:plnm plenum kawpow the same pressure at every outlet",
     "t:qnet blockchain post quantum resistant layer 1",
