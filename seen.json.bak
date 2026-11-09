@@ -73,9 +73,10 @@
     5599218,
     5599254,
     5599283,
-    5599346
+    5599346,
+    5599347
   ],
-  "max_topic_id": 5599346,
+  "max_topic_id": 5599347,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -184,6 +185,10 @@
     "5599346": {
       "title": "[ANN] Torvyon (tBit) | Post-Quantum Layer 1 | UTXO | Live Mainnet | Explorer & SDK",
       "at": "2026-11-09T18:44:03+00:00"
+    },
+    "5599347": {
+      "title": "DORK Hard Fork: Staking Rewards Slide to 1 DORK",
+      "at": "2026-11-09T18:59:02+00:00"
     }
   },
   "notified_keys": [
@@ -207,6 +212,7 @@
     "t:bitrubin brbn burn bitcoin create bitrubin",
     "t:boing network quality assured layer 1 rust pos hotstuff bft testn",
     "t:devs wanted kasual labz development team recruitment",
+    "t:dork hard fork staking rewards slide to 1 dork",
     "t:floofychain",
     "t:hcrn scaling settlement without sacrificing verification",
     "t:kawaidcoin kwd python sha 256 pow blockchain faucet cpu miner",
