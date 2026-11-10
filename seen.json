@@ -77,9 +77,10 @@
     5599347,
     5599366,
     5599371,
-    5599393
+    5599393,
+    5599397
   ],
-  "max_topic_id": 5599393,
+  "max_topic_id": 5599397,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -200,6 +201,10 @@
     "5599393": {
       "title": "[ANN] Proof-of-Shiz (PoSz) | The Ultimate PoS Coin | Peer-to-Peer Schizophrenia",
       "at": "2026-11-10T06:00:00+00:00"
+    },
+    "5599397": {
+      "title": "SynapseNet 0.2.0-alpha: mining the dark web's forgotten knowledge",
+      "at": "2026-11-10T07:14:59+00:00"
     }
   },
   "notified_keys": [
@@ -239,6 +244,7 @@
     "t:proof of shiz posz the ultimate pos coin peer to peer schizophrenia",
     "t:qnet blockchain post quantum resistant layer 1",
     "t:sov sovereign coin anti asic tensor folding recursive zk stark scali",
+    "t:synapsenet 0 2 0 alpha mining the dark web s forgotten knowledge",
     "t:tape retro boomer fair launch no premine 10b supply",
     "t:testnet neb neural engine byte",
     "t:ting general purpose pow blockchain cpu gpu mining no premine",
