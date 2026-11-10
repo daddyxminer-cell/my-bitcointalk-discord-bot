@@ -79,9 +79,10 @@
     5599371,
     5599393,
     5599397,
-    5599411
+    5599411,
+    5599441
   ],
-  "max_topic_id": 5599411,
+  "max_topic_id": 5599441,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -210,6 +211,10 @@
     "5599411": {
       "title": "[ANN] Chipcoin (CHC) | Mainnet Live | PoW, Post-Quantum Signatures & Node Reward",
       "at": "2026-11-10T09:45:27+00:00"
+    },
+    "5599441": {
+      "title": "HDMEx",
+      "at": "2026-11-10T15:00:56+00:00"
     }
   },
   "notified_keys": [
@@ -240,6 +245,7 @@
     "t:dork hard fork staking rewards slide to 1 dork",
     "t:floofychain",
     "t:hcrn scaling settlement without sacrificing verification",
+    "t:hdmex",
     "t:kawaidcoin kwd python sha 256 pow blockchain faucet cpu miner",
     "t:mfai music film ai on robinhood chain openfair fair launch 1 nov 2026",
     "t:neb roadmap testnet 2 to mainnet",
