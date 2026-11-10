@@ -80,9 +80,10 @@
     5599393,
     5599397,
     5599411,
-    5599441
+    5599441,
+    5599483
   ],
-  "max_topic_id": 5599441,
+  "max_topic_id": 5599483,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -215,9 +216,14 @@
     "5599441": {
       "title": "HDMEx",
       "at": "2026-11-10T15:00:56+00:00"
+    },
+    "5599483": {
+      "title": "[ANN] (CELLS) Quantum-Cells - hybrid privacy coin (GPU+CPU/Argon2d)",
+      "at": "2026-11-10T23:16:26+00:00"
     }
   },
   "notified_keys": [
+    "c:ann|cells",
     "c:aurora|abrs",
     "c:bigcoin|big",
     "c:bitrubin|brbn",
@@ -240,6 +246,7 @@
     "t:big bigcoin independent sha 256d pow chain no ico nothing for sale",
     "t:bitrubin brbn burn bitcoin create bitrubin",
     "t:boing network quality assured layer 1 rust pos hotstuff bft testn",
+    "t:cells quantum cells hybrid privacy coin gpu cpu argon2d",
     "t:chipcoin chc mainnet live pow post quantum signatures node reward",
     "t:devs wanted kasual labz development team recruitment",
     "t:dork hard fork staking rewards slide to 1 dork",
