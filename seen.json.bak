@@ -84,9 +84,10 @@
     5599483,
     5599495,
     5599517,
-    5599556
+    5599556,
+    5599561
   ],
-  "max_topic_id": 5599556,
+  "max_topic_id": 5599561,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -227,6 +228,10 @@
     "5599517": {
       "title": "[ANN] Sixbit (6BIT) Core 2.2.0 – fix for the chain stuck at block 34,082",
       "at": "2026-11-11T07:32:16+00:00"
+    },
+    "5599561": {
+      "title": "[ANN][tVESP] Vesper testnet-2: privacy coin, ring of 48, operator-less pool, mea",
+      "at": "2026-11-11T15:17:43+00:00"
     }
   },
   "notified_keys": [
@@ -246,6 +251,7 @@
     "c:sovereign|sov",
     "c:torvyon|tbit",
     "c:unftchain|unft",
+    "c:vesper|tvesp",
     "c:woad|woad",
     "t:abrs aurora borealis coin kawpow pow native layer 1 blockchain gpu",
     "t:adios bitcoin zcash layer 2",
@@ -278,6 +284,7 @@
     "t:testnet neb neural engine byte",
     "t:ting general purpose pow blockchain cpu gpu mining no premine",
     "t:torvyon tbit post quantum layer 1 utxo live mainnet explorer sdk",
+    "t:tvesp vesper testnet 2 privacy coin ring of 48 operator less pool mea",
     "t:unftchain unft mainnet live proof of fairness identity based minin",
     "t:vaylium a peer to peer digital currency",
     "t:vmrx vargamesh rx randomx pow independent l1 mainnet live cpu",
