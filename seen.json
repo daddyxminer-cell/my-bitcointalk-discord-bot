@@ -89,9 +89,10 @@
     5599589,
     5599594,
     5599608,
-    5599650
+    5599650,
+    5599717
   ],
-  "max_topic_id": 5599650,
+  "max_topic_id": 5599717,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -244,6 +245,10 @@
     "5599650": {
       "title": "[Ann] CoiledCoin II Core 31.1.2 – important bug fix, please upgrade",
       "at": "2026-11-12T08:28:39+00:00"
+    },
+    "5599717": {
+      "title": "[ANN] Grox (GROX) | Fair CPU solo mining | RandomX | 1-min blocks | 21M cap",
+      "at": "2026-11-12T22:30:00+00:00"
     }
   },
   "notified_keys": [
@@ -253,6 +258,7 @@
     "c:bitrubin|brbn",
     "c:chain|nexc",
     "c:chipcoin|chc",
+    "c:grox|grox",
     "c:kawaidcoin|kwd",
     "c:opacra|opca",
     "c:pinch|pinch",
@@ -279,6 +285,7 @@
     "t:devs wanted kasual labz development team recruitment",
     "t:dork hard fork staking rewards slide to 1 dork",
     "t:floofychain",
+    "t:grox grox fair cpu solo mining randomx 1 min blocks 21m cap",
     "t:hcrn scaling settlement without sacrificing verification",
     "t:hdmex",
     "t:kawaidcoin kwd python sha 256 pow blockchain faucet cpu miner",
