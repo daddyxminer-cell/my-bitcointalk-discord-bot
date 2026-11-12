@@ -88,9 +88,10 @@
     5599561,
     5599589,
     5599594,
-    5599608
+    5599608,
+    5599650
   ],
-  "max_topic_id": 5599608,
+  "max_topic_id": 5599650,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -239,6 +240,10 @@
     "5599608": {
       "title": "[ANN][NORTH] TrueNorth | CPU-mined Bitcoin Core fork | RandomX | No premine",
       "at": "2026-11-12T02:28:15+00:00"
+    },
+    "5599650": {
+      "title": "[Ann] CoiledCoin II Core 31.1.2 – important bug fix, please upgrade",
+      "at": "2026-11-12T08:28:39+00:00"
     }
   },
   "notified_keys": [
@@ -270,6 +275,7 @@
     "t:boing network quality assured layer 1 rust pos hotstuff bft testn",
     "t:cells quantum cells hybrid privacy coin gpu cpu argon2d",
     "t:chipcoin chc mainnet live pow post quantum signatures node reward",
+    "t:coiledcoin ii core 31 1 2 important bug fix please upgrade",
     "t:devs wanted kasual labz development team recruitment",
     "t:dork hard fork staking rewards slide to 1 dork",
     "t:floofychain",
