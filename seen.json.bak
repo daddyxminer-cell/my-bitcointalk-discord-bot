@@ -87,9 +87,10 @@
     5599556,
     5599561,
     5599589,
-    5599594
+    5599594,
+    5599608
   ],
-  "max_topic_id": 5599594,
+  "max_topic_id": 5599608,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -234,6 +235,10 @@
     "5599561": {
       "title": "[ANN][tVESP] Vesper testnet-2: privacy coin, ring of 48, operator-less pool, mea",
       "at": "2026-11-11T15:17:43+00:00"
+    },
+    "5599608": {
+      "title": "[ANN][NORTH] TrueNorth | CPU-mined Bitcoin Core fork | RandomX | No premine",
+      "at": "2026-11-12T02:28:15+00:00"
     }
   },
   "notified_keys": [
@@ -252,6 +257,7 @@
     "c:sixbit|6bit",
     "c:sovereign|sov",
     "c:torvyon|tbit",
+    "c:truenorth|north",
     "c:unftchain|unft",
     "c:vesper|tvesp",
     "c:woad|woad",
@@ -273,6 +279,7 @@
     "t:mfai music film ai on robinhood chain openfair fair launch 1 nov 2026",
     "t:neb roadmap testnet 2 to mainnet",
     "t:nex chain nexc ethash pow gpu cpu free solo miner evm dex",
+    "t:north truenorth cpu mined bitcoin core fork randomx no premine",
     "t:opacra opca private cpu mined mainnet 8 nov testnet live",
     "t:pandora testnet live blocks by lottery every message is a token transfer",
     "t:pinch pinch ethash pow no premine gpu cpu solo mining escrow",
