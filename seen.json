@@ -94,9 +94,11 @@
     5599775,
     5599778,
     5599781,
-    5599796
+    5599796,
+    5599821,
+    5599822
   ],
-  "max_topic_id": 5599796,
+  "max_topic_id": 5599822,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -261,6 +263,10 @@
     "5599781": {
       "title": "BitChat",
       "at": "2026-11-13T13:16:21+00:00"
+    },
+    "5599821": {
+      "title": "[ANN] ZaiMiner 1.0 | NVIDIA GPU miner | 25+ algorithms | 1% fee | Multi-GPU",
+      "at": "2026-11-13T21:16:49+00:00"
     }
   },
   "notified_keys": [
@@ -324,6 +330,7 @@
     "t:unftchain unft mainnet live proof of fairness identity based minin",
     "t:vaylium a peer to peer digital currency",
     "t:vmrx vargamesh rx randomx pow independent l1 mainnet live cpu",
-    "t:woad woad randomx cpu pow the colour comes out of the work"
+    "t:woad woad randomx cpu pow the colour comes out of the work",
+    "t:zaiminer 1 0 nvidia gpu miner 25 algorithms 1 fee multi gpu"
   ]
 }
