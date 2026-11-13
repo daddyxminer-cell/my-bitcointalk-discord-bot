@@ -92,9 +92,10 @@
     5599650,
     5599717,
     5599775,
-    5599778
+    5599778,
+    5599781
   ],
-  "max_topic_id": 5599778,
+  "max_topic_id": 5599781,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -255,6 +256,10 @@
     "5599778": {
       "title": "[ANN] Bitcoin Coin Series (Half/Quarter/Dime/Nickel/Cent) | CPU, no premine",
       "at": "2026-11-13T12:31:22+00:00"
+    },
+    "5599781": {
+      "title": "BitChat",
+      "at": "2026-11-13T13:16:21+00:00"
     }
   },
   "notified_keys": [
@@ -283,6 +288,7 @@
     "t:aegis v0 1 0 released post quantum p2p e cash",
     "t:ann maker excal btc 1 1 htlc sovereign fair first taker gets first",
     "t:big bigcoin independent sha 256d pow chain no ico nothing for sale",
+    "t:bitchat",
     "t:bitcoin coin series half quarter dime nickel cent cpu no premine",
     "t:bitrubin brbn burn bitcoin create bitrubin",
     "t:boing network quality assured layer 1 rust pos hotstuff bft testn",
