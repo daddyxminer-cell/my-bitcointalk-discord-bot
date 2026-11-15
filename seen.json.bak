@@ -98,9 +98,10 @@
     5599821,
     5599822,
     5599892,
-    5599910
+    5599910,
+    5599947
   ],
-  "max_topic_id": 5599910,
+  "max_topic_id": 5599947,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -277,6 +278,10 @@
     "5599910": {
       "title": "[ANN] [TESTNET] Obsolete Coin (OBSC) | RandomX CPU | 90s Geocities",
       "at": "2026-11-15T01:49:26+00:00"
+    },
+    "5599947": {
+      "title": "[ANN][MAINNET] NEB: mining trains a neural network, starts Nov 18, 14:00 UTC",
+      "at": "2026-11-15T15:05:19+00:00"
     }
   },
   "notified_keys": [
@@ -322,6 +327,7 @@
     "t:hcrn scaling settlement without sacrificing verification",
     "t:hdmex",
     "t:kawaidcoin kwd python sha 256 pow blockchain faucet cpu miner",
+    "t:mainnet neb mining trains a neural network starts nov 18 14 00 utc",
     "t:mfai music film ai on robinhood chain openfair fair launch 1 nov 2026",
     "t:neb roadmap testnet 2 to mainnet",
     "t:nex chain nexc ethash pow gpu cpu free solo miner evm dex",
