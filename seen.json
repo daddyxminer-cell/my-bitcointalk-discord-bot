@@ -97,9 +97,10 @@
     5599796,
     5599821,
     5599822,
-    5599892
+    5599892,
+    5599910
   ],
-  "max_topic_id": 5599892,
+  "max_topic_id": 5599910,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -272,6 +273,10 @@
     "5599892": {
       "title": "**[GPU MINING] Proxima (PRX) — One of the Most Profitable New Coins to Mine? 🚀*",
       "at": "2026-11-14T19:34:03+00:00"
+    },
+    "5599910": {
+      "title": "[ANN] [TESTNET] Obsolete Coin (OBSC) | RandomX CPU | 90s Geocities",
+      "at": "2026-11-15T01:49:26+00:00"
     }
   },
   "notified_keys": [
@@ -281,6 +286,7 @@
     "c:bitrubin|brbn",
     "c:chain|nexc",
     "c:chipcoin|chc",
+    "c:coin|obsc",
     "c:grox|grox",
     "c:kawaidcoin|kwd",
     "c:opacra|opca",
@@ -331,6 +337,7 @@
     "t:synapsenet 0 2 0 alpha mining the dark web s forgotten knowledge",
     "t:tape retro boomer fair launch no premine 10b supply",
     "t:testnet neb neural engine byte",
+    "t:testnet obsolete coin obsc randomx cpu 90s geocities",
     "t:ting general purpose pow blockchain cpu gpu mining no premine",
     "t:torvyon tbit post quantum layer 1 utxo live mainnet explorer sdk",
     "t:tvesp vesper testnet 2 privacy coin ring of 48 operator less pool mea",
