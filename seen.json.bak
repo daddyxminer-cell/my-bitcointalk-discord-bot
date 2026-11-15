@@ -99,9 +99,10 @@
     5599822,
     5599892,
     5599910,
-    5599947
+    5599947,
+    5599956
   ],
-  "max_topic_id": 5599947,
+  "max_topic_id": 5599956,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -282,6 +283,10 @@
     "5599947": {
       "title": "[ANN][MAINNET] NEB: mining trains a neural network, starts Nov 18, 14:00 UTC",
       "at": "2026-11-15T15:05:19+00:00"
+    },
+    "5599956": {
+      "title": "[ANN] [QC] QuantumCoin | PoW Layer-1 | Built in Go | Testnet Preparation",
+      "at": "2026-11-15T17:05:54+00:00"
     }
   },
   "notified_keys": [
@@ -298,6 +303,7 @@
     "c:pinch|pinch",
     "c:plenum|plnm",
     "c:proxima|prx",
+    "c:quantumcoin|qc",
     "c:retro|tape",
     "c:shiz|posz",
     "c:sixbit|6bit",
@@ -337,6 +343,7 @@
     "t:pinch pinch ethash pow no premine gpu cpu solo mining escrow",
     "t:plnm plenum kawpow the same pressure at every outlet",
     "t:proof of shiz posz the ultimate pos coin peer to peer schizophrenia",
+    "t:qc quantumcoin pow layer 1 built in go testnet preparation",
     "t:qnet blockchain post quantum resistant layer 1",
     "t:sixbit 6bit core 2 2 0 fix for the chain stuck at block 34 082",
     "t:sov sovereign coin anti asic tensor folding recursive zk stark scali",
