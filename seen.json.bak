@@ -104,9 +104,10 @@
     5599967,
     5600033,
     5600039,
-    5600050
+    5600050,
+    5600075
   ],
-  "max_topic_id": 5600050,
+  "max_topic_id": 5600075,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -291,6 +292,10 @@
     "5599956": {
       "title": "[ANN] [QC] QuantumCoin | PoW Layer-1 | Built in Go | Testnet Preparation",
       "at": "2026-11-15T17:05:54+00:00"
+    },
+    "5600075": {
+      "title": "[ANN] BOUND | CPU-mined, no premine | launched 16 Nov 2026 | written from scratc",
+      "at": "2026-11-16T15:22:38+00:00"
     }
   },
   "notified_keys": [
@@ -326,6 +331,7 @@
     "t:bitcoin coin series half quarter dime nickel cent cpu no premine",
     "t:bitrubin brbn burn bitcoin create bitrubin",
     "t:boing network quality assured layer 1 rust pos hotstuff bft testn",
+    "t:bound cpu mined no premine launched 16 nov 2026 written from scratc",
     "t:cells quantum cells hybrid privacy coin gpu cpu argon2d",
     "t:chipcoin chc mainnet live pow post quantum signatures node reward",
     "t:coiledcoin ii core 31 1 2 important bug fix please upgrade",
