@@ -110,9 +110,10 @@
     5600164,
     5600175,
     5600186,
-    5600208
+    5600208,
+    5600215
   ],
-  "max_topic_id": 5600208,
+  "max_topic_id": 5600215,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -313,6 +314,10 @@
     "5600208": {
       "title": "[PRE-ANN] Spek | Post-quantum unbonded proof of stake | Testnet soon",
       "at": "2026-11-17T18:39:54+00:00"
+    },
+    "5600215": {
+      "title": "[ANN] Quinvium (QU) | GPU PoW (Ethash) | EVM smart contracts | No premine | Main",
+      "at": "2026-11-17T19:39:54+00:00"
     }
   },
   "notified_keys": [
@@ -332,6 +337,7 @@
     "c:plenum|plnm",
     "c:proxima|prx",
     "c:quantumcoin|qc",
+    "c:quinvium|qu",
     "c:retro|tape",
     "c:shiz|posz",
     "c:sixbit|6bit",
@@ -376,6 +382,7 @@
     "t:psy psyrob block dag network with cpu mining argon2d fair launch",
     "t:qc quantumcoin pow layer 1 built in go testnet preparation",
     "t:qnet blockchain post quantum resistant layer 1",
+    "t:quinvium qu gpu pow ethash evm smart contracts no premine main",
     "t:sixbit 6bit core 2 2 0 fix for the chain stuck at block 34 082",
     "t:sov sovereign coin anti asic tensor folding recursive zk stark scali",
     "t:spek post quantum unbonded proof of stake testnet soon",
