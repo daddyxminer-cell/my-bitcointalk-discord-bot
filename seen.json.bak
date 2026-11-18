@@ -112,9 +112,11 @@
     5600186,
     5600208,
     5600215,
-    5600266
+    5600266,
+    5600276,
+    5600277
   ],
-  "max_topic_id": 5600266,
+  "max_topic_id": 5600277,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -323,6 +325,14 @@
     "5600266": {
       "title": "[ANN] Aurum Crypto Gold (ACG) 2.4.0 – community rescue fork | ASERT + StallGuard",
       "at": "2026-11-18T12:41:37+00:00"
+    },
+    "5600276": {
+      "title": "[Pre-ANN] Monario (MONAR) — A CPU-Mineable Privacy Coin | RandomX | No Premine",
+      "at": "2026-11-18T13:41:37+00:00"
+    },
+    "5600277": {
+      "title": "BitChatChain (BCC)",
+      "at": "2026-11-18T13:41:37+00:00"
     }
   },
   "notified_keys": [
@@ -330,6 +340,7 @@
     "c:ann|psy",
     "c:aurora|abrs",
     "c:bigcoin|big",
+    "c:bitchatchain|bcc",
     "c:bitrubin|brbn",
     "c:chain|nexc",
     "c:chipcoin|chc",
@@ -337,6 +348,7 @@
     "c:gold|acg",
     "c:grox|grox",
     "c:kawaidcoin|kwd",
+    "c:monario|monar",
     "c:nival|nvl",
     "c:opacra|opca",
     "c:pinch|pinch",
@@ -360,6 +372,7 @@
     "t:aurum crypto gold acg 2 4 0 community rescue fork asert stallguard",
     "t:big bigcoin independent sha 256d pow chain no ico nothing for sale",
     "t:bitchat",
+    "t:bitchatchain bcc",
     "t:bitcoin coin series half quarter dime nickel cent cpu no premine",
     "t:bitrubin brbn burn bitcoin create bitrubin",
     "t:boing network quality assured layer 1 rust pos hotstuff bft testn",
@@ -377,6 +390,7 @@
     "t:kawaidcoin kwd python sha 256 pow blockchain faucet cpu miner",
     "t:mainnet neb mining trains a neural network starts nov 18 14 00 utc",
     "t:mfai music film ai on robinhood chain openfair fair launch 1 nov 2026",
+    "t:monario monar a cpu mineable privacy coin randomx no premine",
     "t:neb roadmap testnet 2 to mainnet",
     "t:nex chain nexc ethash pow gpu cpu free solo miner evm dex",
     "t:north truenorth cpu mined bitcoin core fork randomx no premine",
