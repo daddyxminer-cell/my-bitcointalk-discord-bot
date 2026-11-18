@@ -114,9 +114,10 @@
     5600215,
     5600266,
     5600276,
-    5600277
+    5600277,
+    5600283
   ],
-  "max_topic_id": 5600277,
+  "max_topic_id": 5600283,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -333,6 +334,10 @@
     "5600277": {
       "title": "BitChatChain (BCC)",
       "at": "2026-11-18T13:41:37+00:00"
+    },
+    "5600283": {
+      "title": "[ANN] NEB (Neural Engine Byte) - mainnet live",
+      "at": "2026-11-18T14:56:37+00:00"
     }
   },
   "notified_keys": [
@@ -391,6 +396,7 @@
     "t:mainnet neb mining trains a neural network starts nov 18 14 00 utc",
     "t:mfai music film ai on robinhood chain openfair fair launch 1 nov 2026",
     "t:monario monar a cpu mineable privacy coin randomx no premine",
+    "t:neb neural engine byte mainnet live",
     "t:neb roadmap testnet 2 to mainnet",
     "t:nex chain nexc ethash pow gpu cpu free solo miner evm dex",
     "t:north truenorth cpu mined bitcoin core fork randomx no premine",
