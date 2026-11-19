@@ -117,9 +117,10 @@
     5600277,
     5600283,
     5600305,
-    5600316
+    5600316,
+    5600319
   ],
-  "max_topic_id": 5600316,
+  "max_topic_id": 5600319,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -344,6 +345,10 @@
     "5600316": {
       "title": "[ANN] [PPC] PoolPayCoin -NO PREMINE- RandomX + ASERT / Fair-Launch CPU-Only Coin",
       "at": "2026-11-19T00:27:48+00:00"
+    },
+    "5600319": {
+      "title": "[ANN] Orien (ORN) | Quantum-proof, instant payments | No premine | RandomX CPU",
+      "at": "2026-11-19T00:57:48+00:00"
     }
   },
   "notified_keys": [
@@ -362,6 +367,7 @@
     "c:monario|monar",
     "c:nival|nvl",
     "c:opacra|opca",
+    "c:orien|orn",
     "c:pinch|pinch",
     "c:plenum|plnm",
     "c:poolpaycoin|ppc",
@@ -409,6 +415,7 @@
     "t:north truenorth cpu mined bitcoin core fork randomx no premine",
     "t:nvl nival randomx pow ringct privacy zero premine conditional pay",
     "t:opacra opca private cpu mined mainnet 8 nov testnet live",
+    "t:orien orn quantum proof instant payments no premine randomx cpu",
     "t:pandora testnet live blocks by lottery every message is a token transfer",
     "t:pinch pinch ethash pow no premine gpu cpu solo mining escrow",
     "t:plnm plenum kawpow the same pressure at every outlet",
