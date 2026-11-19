@@ -116,9 +116,10 @@
     5600276,
     5600277,
     5600283,
-    5600305
+    5600305,
+    5600316
   ],
-  "max_topic_id": 5600305,
+  "max_topic_id": 5600316,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -339,6 +340,10 @@
     "5600283": {
       "title": "[ANN] NEB (Neural Engine Byte) - mainnet live",
       "at": "2026-11-18T14:56:37+00:00"
+    },
+    "5600316": {
+      "title": "[ANN] [PPC] PoolPayCoin -NO PREMINE- RandomX + ASERT / Fair-Launch CPU-Only Coin",
+      "at": "2026-11-19T00:27:48+00:00"
     }
   },
   "notified_keys": [
@@ -359,6 +364,7 @@
     "c:opacra|opca",
     "c:pinch|pinch",
     "c:plenum|plnm",
+    "c:poolpaycoin|ppc",
     "c:proxima|prx",
     "c:quantumcoin|qc",
     "c:quinvium|qu",
@@ -406,6 +412,7 @@
     "t:pandora testnet live blocks by lottery every message is a token transfer",
     "t:pinch pinch ethash pow no premine gpu cpu solo mining escrow",
     "t:plnm plenum kawpow the same pressure at every outlet",
+    "t:ppc poolpaycoin no premine randomx asert fair launch cpu only coin",
     "t:proof of shiz posz the ultimate pos coin peer to peer schizophrenia",
     "t:psy psyrob block dag network with cpu mining argon2d fair launch",
     "t:qc quantumcoin pow layer 1 built in go testnet preparation",
