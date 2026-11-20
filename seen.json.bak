@@ -120,9 +120,10 @@
     5600316,
     5600319,
     5600321,
-    5600335
+    5600335,
+    5600447
   ],
-  "max_topic_id": 5600335,
+  "max_topic_id": 5600447,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -359,6 +360,10 @@
     "5600335": {
       "title": "A quantum-proof cryptocurrency with no blocks. CPU-POW",
       "at": "2026-11-19T04:13:10+00:00"
+    },
+    "5600447": {
+      "title": "Obsidio: A Post-Quantum Privacy Chain — Mainnet v2 Live with, DEX, Messenger",
+      "at": "2026-11-20T08:15:24+00:00"
     }
   },
   "notified_keys": [
@@ -427,6 +432,7 @@
     "t:nex chain nexc ethash pow gpu cpu free solo miner evm dex",
     "t:north truenorth cpu mined bitcoin core fork randomx no premine",
     "t:nvl nival randomx pow ringct privacy zero premine conditional pay",
+    "t:obsidio a post quantum privacy chain mainnet v2 live with dex messenger",
     "t:opacra opca private cpu mined mainnet 8 nov testnet live",
     "t:orien orn quantum proof instant payments no premine randomx cpu",
     "t:pandora testnet live blocks by lottery every message is a token transfer",
