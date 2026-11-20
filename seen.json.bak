@@ -122,9 +122,10 @@
     5600321,
     5600335,
     5600447,
-    5600452
+    5600452,
+    5600487
   ],
-  "max_topic_id": 5600452,
+  "max_topic_id": 5600487,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -369,6 +370,10 @@
     "5600452": {
       "title": "[ANN] [NXC] NexCoin - Pure CPU Mineable | Yespower PoW | 5s Block Time | 0% Prem",
       "at": "2026-11-20T09:00:25+00:00"
+    },
+    "5600487": {
+      "title": "[ANN] PeerCash (PEER) - Fair-Launch CPU-Mineable EVM Layer 1 | RandomX | No Prem",
+      "at": "2026-11-20T18:01:16+00:00"
     }
   },
   "notified_keys": [
@@ -390,6 +395,7 @@
     "c:nival|nvl",
     "c:opacra|opca",
     "c:orien|orn",
+    "c:peercash|peer",
     "c:pinch|pinch",
     "c:plenum|plnm",
     "c:poolpaycoin|ppc",
@@ -443,6 +449,7 @@
     "t:opacra opca private cpu mined mainnet 8 nov testnet live",
     "t:orien orn quantum proof instant payments no premine randomx cpu",
     "t:pandora testnet live blocks by lottery every message is a token transfer",
+    "t:peercash peer fair launch cpu mineable evm layer 1 randomx no prem",
     "t:pinch pinch ethash pow no premine gpu cpu solo mining escrow",
     "t:plnm plenum kawpow the same pressure at every outlet",
     "t:ppc poolpaycoin no premine randomx asert fair launch cpu only coin",
