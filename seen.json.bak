@@ -123,9 +123,10 @@
     5600335,
     5600447,
     5600452,
-    5600487
+    5600487,
+    5600512
   ],
-  "max_topic_id": 5600487,
+  "max_topic_id": 5600512,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -374,6 +375,10 @@
     "5600487": {
       "title": "[ANN] PeerCash (PEER) - Fair-Launch CPU-Mineable EVM Layer 1 | RandomX | No Prem",
       "at": "2026-11-20T18:01:16+00:00"
+    },
+    "5600512": {
+      "title": "Bitflate (BFL) Network is Back Online - Community Archive & Live Seed Node",
+      "at": "2026-11-21T01:46:45+00:00"
     }
   },
   "notified_keys": [
@@ -383,6 +388,7 @@
     "c:aurora|abrs",
     "c:bigcoin|big",
     "c:bitchatchain|bcc",
+    "c:bitflate|bfl",
     "c:bitrubin|brbn",
     "c:chain|nexc",
     "c:chipcoin|chc",
@@ -422,6 +428,7 @@
     "t:bitchat",
     "t:bitchatchain bcc",
     "t:bitcoin coin series half quarter dime nickel cent cpu no premine",
+    "t:bitflate bfl network is back online community archive live seed node",
     "t:bitrubin brbn burn bitcoin create bitrubin",
     "t:boing network quality assured layer 1 rust pos hotstuff bft testn",
     "t:bound cpu mined no premine launched 16 nov 2026 written from scratc",
