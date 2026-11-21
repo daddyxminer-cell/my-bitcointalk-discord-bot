@@ -125,9 +125,10 @@
     5600452,
     5600487,
     5600512,
-    5600514
+    5600514,
+    5600561
   ],
-  "max_topic_id": 5600514,
+  "max_topic_id": 5600561,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -384,6 +385,10 @@
     "5600514": {
       "title": "[ANN] Keystead (KSTD) — Fair-launch self-custody coin, merge-mined BTC LTC XMR",
       "at": "2026-11-21T02:46:45+00:00"
+    },
+    "5600561": {
+      "title": "Sixbit Core 2.2.2 released SHA-256 - please upgrade",
+      "at": "2026-11-21T13:17:54+00:00"
     }
   },
   "notified_keys": [
@@ -473,6 +478,7 @@
     "t:qnet blockchain post quantum resistant layer 1",
     "t:quinvium qu gpu pow ethash evm smart contracts no premine main",
     "t:sixbit 6bit core 2 2 0 fix for the chain stuck at block 34 082",
+    "t:sixbit core 2 2 2 released sha 256 please upgrade",
     "t:sov sovereign coin anti asic tensor folding recursive zk stark scali",
     "t:spek post quantum unbonded proof of stake testnet soon",
     "t:synapsenet 0 2 0 alpha mining the dark web s forgotten knowledge",
