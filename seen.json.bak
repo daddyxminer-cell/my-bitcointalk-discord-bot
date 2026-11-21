@@ -126,9 +126,10 @@
     5600487,
     5600512,
     5600514,
-    5600561
+    5600561,
+    5600588
   ],
-  "max_topic_id": 5600561,
+  "max_topic_id": 5600588,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -389,11 +390,16 @@
     "5600561": {
       "title": "Sixbit Core 2.2.2 released SHA-256 - please upgrade",
       "at": "2026-11-21T13:17:54+00:00"
+    },
+    "5600588": {
+      "title": "[ANN] (RCPU) RatherCPU - Bitcoin Core 27.0 + RandomX+Etchash + CT (Mainnet)",
+      "at": "2026-11-21T23:33:47+00:00"
     }
   },
   "notified_keys": [
     "c:ann|cells",
     "c:ann|psy",
+    "c:ann|rcpu",
     "c:armax|arm",
     "c:aurora|abrs",
     "c:bigcoin|big",
@@ -477,6 +483,7 @@
     "t:qc quantumcoin pow layer 1 built in go testnet preparation",
     "t:qnet blockchain post quantum resistant layer 1",
     "t:quinvium qu gpu pow ethash evm smart contracts no premine main",
+    "t:rcpu rathercpu bitcoin core 27 0 randomx etchash ct mainnet",
     "t:sixbit 6bit core 2 2 0 fix for the chain stuck at block 34 082",
     "t:sixbit core 2 2 2 released sha 256 please upgrade",
     "t:sov sovereign coin anti asic tensor folding recursive zk stark scali",
