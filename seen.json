@@ -128,9 +128,10 @@
     5600514,
     5600561,
     5600588,
-    5600610
+    5600610,
+    5600620
   ],
-  "max_topic_id": 5600610,
+  "max_topic_id": 5600620,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -395,6 +396,10 @@
     "5600588": {
       "title": "[ANN] (RCPU) RatherCPU - Bitcoin Core 27.0 + RandomX+Etchash + CT (Mainnet)",
       "at": "2026-11-21T23:33:47+00:00"
+    },
+    "5600620": {
+      "title": "[ANN][TESTNET] CoinCync (CYNC)  private-by-default Rust PoW chain testnet live",
+      "at": "2026-11-22T06:49:46+00:00"
     }
   },
   "notified_keys": [
@@ -409,6 +414,7 @@
     "c:bitrubin|brbn",
     "c:chain|nexc",
     "c:chipcoin|chc",
+    "c:coincync|cync",
     "c:coin|obsc",
     "c:gold|acg",
     "c:grox|grox",
@@ -491,6 +497,7 @@
     "t:spek post quantum unbonded proof of stake testnet soon",
     "t:synapsenet 0 2 0 alpha mining the dark web s forgotten knowledge",
     "t:tape retro boomer fair launch no premine 10b supply",
+    "t:testnet coincync cync private by default rust pow chain testnet live",
     "t:testnet neb neural engine byte",
     "t:testnet obsolete coin obsc randomx cpu 90s geocities",
     "t:ting general purpose pow blockchain cpu gpu mining no premine",
