@@ -132,9 +132,10 @@
     5600620,
     5600629,
     5600630,
-    5600644
+    5600644,
+    5600654
   ],
-  "max_topic_id": 5600644,
+  "max_topic_id": 5600654,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -411,6 +412,10 @@
     "5600630": {
       "title": "[ANN] Midwimble (MDW)  MimbleWimble privacy chain, merge-mined with Midstate",
       "at": "2026-11-22T10:50:11+00:00"
+    },
+    "5600654": {
+      "title": "[ANN] BTC-RN | PoW BTC Recovery Network - mine together, recover lost BTC",
+      "at": "2026-11-22T16:35:29+00:00"
     }
   },
   "notified_keys": [
@@ -469,6 +474,7 @@
     "t:bitrubin brbn burn bitcoin create bitrubin",
     "t:boing network quality assured layer 1 rust pos hotstuff bft testn",
     "t:bound cpu mined no premine launched 16 nov 2026 written from scratc",
+    "t:btc rn pow btc recovery network mine together recover lost btc",
     "t:cells quantum cells hybrid privacy coin gpu cpu argon2d",
     "t:chipcoin chc mainnet live pow post quantum signatures node reward",
     "t:coiledcoin ii core 31 1 2 important bug fix please upgrade",
