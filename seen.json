@@ -136,9 +136,10 @@
     5600654,
     5600719,
     5600758,
-    5600760
+    5600760,
+    5600778
   ],
-  "max_topic_id": 5600760,
+  "max_topic_id": 5600778,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -423,6 +424,10 @@
     "5600760": {
       "title": "[ANN][PEP] Electrum-PEP - Pepecoin Wallet for Windows",
       "at": "2026-11-23T22:22:45+00:00"
+    },
+    "5600778": {
+      "title": "Bitflash (BTF) — Bitcoin 0.1.0, RandomX CPU Mining, Tor Network & Beyond",
+      "at": "2026-11-24T06:38:43+00:00"
     }
   },
   "notified_keys": [
@@ -433,6 +438,7 @@
     "c:aurora|abrs",
     "c:bigcoin|big",
     "c:bitchatchain|bcc",
+    "c:bitflash|btf",
     "c:bitflate|bfl",
     "c:bitrubin|brbn",
     "c:chain|nexc",
@@ -478,6 +484,7 @@
     "t:bitchat",
     "t:bitchatchain bcc",
     "t:bitcoin coin series half quarter dime nickel cent cpu no premine",
+    "t:bitflash btf bitcoin 0 1 0 randomx cpu mining tor network beyond",
     "t:bitflate bfl network is back online community archive live seed node",
     "t:bitrubin brbn burn bitcoin create bitrubin",
     "t:boing network quality assured layer 1 rust pos hotstuff bft testn",
