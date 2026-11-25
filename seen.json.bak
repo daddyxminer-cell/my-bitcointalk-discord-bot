@@ -141,9 +141,10 @@
     5600813,
     5600851,
     5600906,
-    5600910
+    5600910,
+    5600915
   ],
-  "max_topic_id": 5600910,
+  "max_topic_id": 5600915,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -440,6 +441,10 @@
     "5600910": {
       "title": "[ANN] [FNX] FENIXON  Independent SHA-256 PoW Blockchain | Native SegWit | Live",
       "at": "2026-11-25T16:11:39+00:00"
+    },
+    "5600915": {
+      "title": "[ANN] PUNZI WARS | 64 ownerless bonding-curve markets | 21 chains (plus Base)",
+      "at": "2026-11-25T16:41:39+00:00"
     }
   },
   "notified_keys": [
@@ -539,6 +544,7 @@
     "t:ppc poolpaycoin no premine randomx asert fair launch cpu only coin",
     "t:proof of shiz posz the ultimate pos coin peer to peer schizophrenia",
     "t:psy psyrob block dag network with cpu mining argon2d fair launch",
+    "t:punzi wars 64 ownerless bonding curve markets 21 chains plus base",
     "t:qc quantumcoin pow layer 1 built in go testnet preparation",
     "t:qnet blockchain post quantum resistant layer 1",
     "t:quinvium qu gpu pow ethash evm smart contracts no premine main",
