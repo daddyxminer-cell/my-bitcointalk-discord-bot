@@ -143,9 +143,10 @@
     5600906,
     5600910,
     5600915,
-    5600938
+    5600938,
+    5600960
   ],
-  "max_topic_id": 5600938,
+  "max_topic_id": 5600960,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -450,6 +451,10 @@
     "5600938": {
       "title": "[ANN] LiAura Coin (LIA) - Layer-1 Privacy Cryptocurrency  RandomX PoW  Mainnet",
       "at": "2026-11-25T19:12:06+00:00"
+    },
+    "5600960": {
+      "title": "[ANN] GENORYN (GNR) — Krypton Network | Decentralized Mining | Quantum-Resistant",
+      "at": "2026-11-25T23:27:26+00:00"
     }
   },
   "notified_keys": [
@@ -470,6 +475,7 @@
     "c:coin|obsc",
     "c:electrum|pep",
     "c:fenixon|fnx",
+    "c:genoryn|gnr",
     "c:gold|acg",
     "c:grox|grox",
     "c:kawaidcoin|kwd",
@@ -522,6 +528,7 @@
     "t:dork hard fork staking rewards slide to 1 dork",
     "t:floofychain",
     "t:fnx fenixon independent sha 256 pow blockchain native segwit live",
+    "t:genoryn gnr krypton network decentralized mining quantum resistant",
     "t:gpu mining proxima prx one of the most profitable new coins to mine",
     "t:grox grox fair cpu solo mining randomx 1 min blocks 21m cap",
     "t:hcrn scaling settlement without sacrificing verification",
