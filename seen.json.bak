@@ -139,9 +139,10 @@
     5600760,
     5600778,
     5600813,
-    5600851
+    5600851,
+    5600906
   ],
-  "max_topic_id": 5600851,
+  "max_topic_id": 5600906,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -430,6 +431,10 @@
     "5600778": {
       "title": "Bitflash (BTF) — Bitcoin 0.1.0, RandomX CPU Mining, Tor Network & Beyond",
       "at": "2026-11-24T06:38:43+00:00"
+    },
+    "5600906": {
+      "title": "[ANN] Rogue Network (RGN) | Scrypt PoW | FORGE Buybacks | Rogue Isles",
+      "at": "2026-11-25T14:56:39+00:00"
     }
   },
   "notified_keys": [
@@ -455,6 +460,7 @@
     "c:midstate|mds",
     "c:midwimble|mdw",
     "c:monario|monar",
+    "c:network|rgn",
     "c:nexcoin|nxc",
     "c:nival|nvl",
     "c:opacra|opca",
@@ -530,6 +536,7 @@
     "t:qnet blockchain post quantum resistant layer 1",
     "t:quinvium qu gpu pow ethash evm smart contracts no premine main",
     "t:rcpu rathercpu bitcoin core 27 0 randomx etchash ct mainnet",
+    "t:rogue network rgn scrypt pow forge buybacks rogue isles",
     "t:sixbit 6bit core 2 2 0 fix for the chain stuck at block 34 082",
     "t:sixbit core 2 2 2 released sha 256 please upgrade",
     "t:sov sovereign coin anti asic tensor folding recursive zk stark scali",
