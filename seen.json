@@ -146,9 +146,10 @@
     5600938,
     5600960,
     5600998,
-    5601022
+    5601022,
+    5601042
   ],
-  "max_topic_id": 5601022,
+  "max_topic_id": 5601042,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -465,10 +466,15 @@
     "5601022": {
       "title": "Hidering HRG",
       "at": "2026-11-26T17:44:00+00:00"
+    },
+    "5601042": {
+      "title": "[ANN] (NOX) NoxiumChain - untraceable cryptocurrency (RandomX, Fair launch)",
+      "at": "2026-11-26T20:14:26+00:00"
     }
   },
   "notified_keys": [
     "c:ann|cells",
+    "c:ann|nox",
     "c:ann|psy",
     "c:ann|rcpu",
     "c:armax|arm",
@@ -557,6 +563,7 @@
     "t:neb roadmap testnet 2 to mainnet",
     "t:nex chain nexc ethash pow gpu cpu free solo miner evm dex",
     "t:north truenorth cpu mined bitcoin core fork randomx no premine",
+    "t:nox noxiumchain untraceable cryptocurrency randomx fair launch",
     "t:nvl nival randomx pow ringct privacy zero premine conditional pay",
     "t:nxc nexcoin pure cpu mineable yespower pow 5s block time 0 prem",
     "t:obsidio a post quantum privacy chain mainnet v2 live with dex messenger",
