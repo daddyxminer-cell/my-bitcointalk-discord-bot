@@ -144,9 +144,10 @@
     5600910,
     5600915,
     5600938,
-    5600960
+    5600960,
+    5600998
   ],
-  "max_topic_id": 5600960,
+  "max_topic_id": 5600998,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -455,6 +456,10 @@
     "5600960": {
       "title": "[ANN] GENORYN (GNR) — Krypton Network | Decentralized Mining | Quantum-Resistant",
       "at": "2026-11-25T23:27:26+00:00"
+    },
+    "5600998": {
+      "title": "[ANN] Solvyren (SVY) — Mainnet Live | SMW-16/2048 v1 | Public Mining Open",
+      "at": "2026-11-26T12:43:19+00:00"
     }
   },
   "notified_keys": [
@@ -498,6 +503,7 @@
     "c:retro|tape",
     "c:shiz|posz",
     "c:sixbit|6bit",
+    "c:solvyren|svy",
     "c:sovereign|sov",
     "c:torvyon|tbit",
     "c:truenorth|north",
@@ -566,6 +572,7 @@
     "t:rogue network rgn scrypt pow forge buybacks rogue isles",
     "t:sixbit 6bit core 2 2 0 fix for the chain stuck at block 34 082",
     "t:sixbit core 2 2 2 released sha 256 please upgrade",
+    "t:solvyren svy mainnet live smw 16 2048 v1 public mining open",
     "t:sov sovereign coin anti asic tensor folding recursive zk stark scali",
     "t:spek post quantum unbonded proof of stake testnet soon",
     "t:synapsenet 0 2 0 alpha mining the dark web s forgotten knowledge",
