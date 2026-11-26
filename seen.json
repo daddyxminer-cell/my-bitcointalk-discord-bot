@@ -145,9 +145,10 @@
     5600915,
     5600938,
     5600960,
-    5600998
+    5600998,
+    5601022
   ],
-  "max_topic_id": 5600998,
+  "max_topic_id": 5601022,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -460,6 +461,10 @@
     "5600998": {
       "title": "[ANN] Solvyren (SVY) — Mainnet Live | SMW-16/2048 v1 | Public Mining Open",
       "at": "2026-11-26T12:43:19+00:00"
+    },
+    "5601022": {
+      "title": "Hidering HRG",
+      "at": "2026-11-26T17:44:00+00:00"
     }
   },
   "notified_keys": [
@@ -539,6 +544,7 @@
     "t:grox grox fair cpu solo mining randomx 1 min blocks 21m cap",
     "t:hcrn scaling settlement without sacrificing verification",
     "t:hdmex",
+    "t:hidering hrg",
     "t:kawaidcoin kwd python sha 256 pow blockchain faucet cpu miner",
     "t:keystead kstd fair launch self custody coin merge mined btc ltc xmr",
     "t:liaura coin lia layer 1 privacy cryptocurrency randomx pow mainnet",
