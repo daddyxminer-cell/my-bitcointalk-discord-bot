@@ -148,9 +148,10 @@
     5600998,
     5601022,
     5601042,
-    5601049
+    5601049,
+    5601054
   ],
-  "max_topic_id": 5601049,
+  "max_topic_id": 5601054,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -471,6 +472,10 @@
     "5601042": {
       "title": "[ANN] (NOX) NoxiumChain - untraceable cryptocurrency (RandomX, Fair launch)",
       "at": "2026-11-26T20:14:26+00:00"
+    },
+    "5601054": {
+      "title": "Introducing Catecash (CATE)",
+      "at": "2026-11-27T03:14:53+00:00"
     }
   },
   "notified_keys": [
@@ -485,6 +490,7 @@
     "c:bitflash|btf",
     "c:bitflate|bfl",
     "c:bitrubin|brbn",
+    "c:catecash|cate",
     "c:chain|nexc",
     "c:chipcoin|chc",
     "c:coincync|cync",
@@ -552,6 +558,7 @@
     "t:hcrn scaling settlement without sacrificing verification",
     "t:hdmex",
     "t:hidering hrg",
+    "t:introducing catecash cate",
     "t:kawaidcoin kwd python sha 256 pow blockchain faucet cpu miner",
     "t:keystead kstd fair launch self custody coin merge mined btc ltc xmr",
     "t:liaura coin lia layer 1 privacy cryptocurrency randomx pow mainnet",
