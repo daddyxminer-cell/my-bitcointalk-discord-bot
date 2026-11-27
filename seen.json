@@ -151,9 +151,11 @@
     5601049,
     5601054,
     5601068,
-    5601106
+    5601106,
+    5601113,
+    5601114
   ],
-  "max_topic_id": 5601106,
+  "max_topic_id": 5601114,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -486,6 +488,14 @@
     "5601106": {
       "title": "SIGMA Network (Σ) – Proof of Engagement | GPU Mining Roadmap",
       "at": "2026-11-27T18:46:22+00:00"
+    },
+    "5601113": {
+      "title": "[ANN] Noticoin - RandomX CPU Mining, Private Payments and Notes on a World Map",
+      "at": "2026-11-27T19:46:21+00:00"
+    },
+    "5601114": {
+      "title": "[ANN] QSDM (CELL) - Post-quantum signatures on a live blockchain",
+      "at": "2026-11-27T19:46:21+00:00"
     }
   },
   "notified_keys": [
@@ -527,6 +537,7 @@
     "c:plenum|plnm",
     "c:poolpaycoin|ppc",
     "c:proxima|prx",
+    "c:qsdm|cell",
     "c:quantumcoin|qc",
     "c:quinvium|qu",
     "c:retro|tape",
@@ -583,6 +594,7 @@
     "t:neb roadmap testnet 2 to mainnet",
     "t:nex chain nexc ethash pow gpu cpu free solo miner evm dex",
     "t:north truenorth cpu mined bitcoin core fork randomx no premine",
+    "t:noticoin randomx cpu mining private payments and notes on a world map",
     "t:nox noxiumchain untraceable cryptocurrency randomx fair launch",
     "t:nvl nival randomx pow ringct privacy zero premine conditional pay",
     "t:nxc nexcoin pure cpu mineable yespower pow 5s block time 0 prem",
@@ -600,6 +612,7 @@
     "t:punzi wars 64 ownerless bonding curve markets 21 chains plus base",
     "t:qc quantumcoin pow layer 1 built in go testnet preparation",
     "t:qnet blockchain post quantum resistant layer 1",
+    "t:qsdm cell post quantum signatures on a live blockchain",
     "t:quinvium qu gpu pow ethash evm smart contracts no premine main",
     "t:rcpu rathercpu bitcoin core 27 0 randomx etchash ct mainnet",
     "t:rogue network rgn scrypt pow forge buybacks rogue isles",
