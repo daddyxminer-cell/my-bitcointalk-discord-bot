@@ -149,9 +149,10 @@
     5601022,
     5601042,
     5601049,
-    5601054
+    5601054,
+    5601068
   ],
-  "max_topic_id": 5601054,
+  "max_topic_id": 5601068,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -476,6 +477,10 @@
     "5601054": {
       "title": "Introducing Catecash (CATE)",
       "at": "2026-11-27T03:14:53+00:00"
+    },
+    "5601068": {
+      "title": "[ANN] AURUM (AUR) | Layer 1 | PoS | 1M Max Supply | 25% Fee Burn | Devnet",
+      "at": "2026-11-27T10:00:21+00:00"
     }
   },
   "notified_keys": [
@@ -485,6 +490,7 @@
     "c:ann|rcpu",
     "c:armax|arm",
     "c:aurora|abrs",
+    "c:aurum|aur",
     "c:bigcoin|big",
     "c:bitchatchain|bcc",
     "c:bitflash|btf",
@@ -534,6 +540,7 @@
     "t:aegis v0 1 0 released post quantum p2p e cash",
     "t:ann maker excal btc 1 1 htlc sovereign fair first taker gets first",
     "t:armax arm fair launch pow layer 1 for android phones public testnet",
+    "t:aurum aur layer 1 pos 1m max supply 25 fee burn devnet",
     "t:aurum crypto gold acg 2 4 0 community rescue fork asert stallguard",
     "t:big bigcoin independent sha 256d pow chain no ico nothing for sale",
     "t:bitchat",
