@@ -153,9 +153,10 @@
     5601068,
     5601106,
     5601113,
-    5601114
+    5601114,
+    5601127
   ],
-  "max_topic_id": 5601114,
+  "max_topic_id": 5601127,
   "notified": {
     "5598214": {
       "title": "[ANN][WOAD] Woad - RandomX CPU PoW, the colour comes out of the work",
@@ -496,6 +497,10 @@
     "5601114": {
       "title": "[ANN] QSDM (CELL) - Post-quantum signatures on a live blockchain",
       "at": "2026-11-27T19:46:21+00:00"
+    },
+    "5601127": {
+      "title": "[ANN] AMEIXA | PoW | Mine in your browser, nothing to install | 100M max supply",
+      "at": "2026-11-27T23:46:51+00:00"
     }
   },
   "notified_keys": [
@@ -554,6 +559,7 @@
     "t:abrs aurora borealis coin kawpow pow native layer 1 blockchain gpu",
     "t:adios bitcoin zcash layer 2",
     "t:aegis v0 1 0 released post quantum p2p e cash",
+    "t:ameixa pow mine in your browser nothing to install 100m max supply",
     "t:ann maker excal btc 1 1 htlc sovereign fair first taker gets first",
     "t:armax arm fair launch pow layer 1 for android phones public testnet",
     "t:aurum aur layer 1 pos 1m max supply 25 fee burn devnet",
